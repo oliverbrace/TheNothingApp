@@ -35,7 +35,15 @@ class MainActivity : ComponentActivity() {
                     viewModel.showAd.collect {
                         canTap = false
                         adManager.showAd()
+                    }
+                }
+
+                launch {
+                    adManager.adClosedEvent.collect {
+                        // Re-enable tap
                         canTap = true
+                        // Tell viewModel to show the next message
+                        viewModel.showPostAdMessage()
                     }
                 }
             }

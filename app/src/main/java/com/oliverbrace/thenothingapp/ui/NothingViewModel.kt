@@ -20,6 +20,10 @@ class NothingViewModel(
 
     val showAd = MutableSharedFlow<Unit>()
 
+    fun showPostAdMessage() {
+        _message.value = messageProvider.randomMessage()
+    }
+
     fun onTap() {
         when (tapController.registerTap()) {
             is TapResult.ShowMessage -> _message.value = messageProvider.randomMessage()
