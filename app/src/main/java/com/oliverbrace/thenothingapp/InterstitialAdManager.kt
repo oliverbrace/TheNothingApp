@@ -37,7 +37,7 @@ class InterstitialAdManager(activity: Activity) {
 
         InterstitialAd.load(
             activity,
-            "ca-app-pub-3940256099942544/1033173712", // test ad
+            "ca-app-pub-4651392825591048/3036159231", // test ad
             request,
             object : InterstitialAdLoadCallback() {
                 override fun onAdLoaded(ad: InterstitialAd) {
